@@ -1,6 +1,6 @@
 import gulp from "gulp"
 import gulpLoadPlugins from "gulp-load-plugins"
-import del from "del"
+import rimraf from "rimraf"
 import webpack from "webpack"
 import broswerSync from "browser-sync"
 import runSequence from "run-sequence"
@@ -60,9 +60,7 @@ gulp.task("bs:reload", (cb) => {
  * =======================================================
  */
 gulp.task("clean", (cb) => {
-  del([
-    "./dist"
-  ]).then(cb);
+  rimraf("./dist", cb);
 });
 
 
